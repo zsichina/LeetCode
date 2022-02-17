@@ -1,3 +1,7 @@
+from typing import List
+from collections import Counter
+import math
+
 class Solution:
     def minimumOperations(self, nums: List[int]) -> int:
         if len(nums) == 1:
