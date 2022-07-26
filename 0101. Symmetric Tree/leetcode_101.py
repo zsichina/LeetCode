@@ -22,3 +22,30 @@ class Solution:
             return True
                 
         return dfs(root.left, root.right)
+
+
+
+class Solution:
+    def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+        left = [root.left]
+        right = [root.right]
+        
+        while left or right:
+            
+            l = left.pop()
+            r = right.pop()
+
+            if not l and not r:
+                continue
+            if not l or not r:
+                return False
+            
+            if l.val != r.val:
+                return False
+            
+            left.append(l.left)
+            left.append(l.right)
+            right.append(r.right)
+            right.append(r.left)
+            
+        return True
