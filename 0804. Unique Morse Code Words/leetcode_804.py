@@ -29,7 +29,8 @@ class Solution:
         ]
 
         transformed_words = {
-            ("".join(morse_code_map[ord(l) - ord(a)]) for l in w) for w in words
+            "".join(morse_code_map[ord(l) - ord("a")] for l in w) for w in words
         }
 
         return len(transformed_words)
+
