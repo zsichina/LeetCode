@@ -21,6 +21,8 @@ class Solution:
             steps = max(steps, nums[idx])
             if steps == 0:
                 break
+            # if idx + steps >= n-1:
+            #     return True
             steps -= 1
         
         return idx == n-1
