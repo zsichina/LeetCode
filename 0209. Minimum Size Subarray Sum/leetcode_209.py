@@ -1,3 +1,4 @@
+from typing import List
 import math
 
 
@@ -13,9 +14,8 @@ class Solution:
             else:
                 sm -= nums[start]
                 start += 1
-                
+
             if sm >= target:
                 min_len = min(min_len, end-start)
 
         return min_len if min_len < math.inf else 0
-
