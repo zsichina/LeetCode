@@ -1,4 +1,6 @@
+from heapq import heapify, heappop
 from typing import List
+
 
 class Solution:
     def diagonalSort(self, mat: List[List[int]]) -> List[List[int]]:
@@ -20,5 +22,31 @@ class Solution:
             diag.sort(reverse=True)
             for i in range(min(m, n-j)):
                 mat[i][j+i] = diag.pop()
+
+        return mat
+
+
+class Solution:
+    def diagonalSort(self, mat: List[List[int]]) -> List[List[int]]:
+        m = len(mat)
+        n = len(mat[0])
+
+        def sortDiagonal(row, col):
+            diag = []
+            diag_len = min(m-row, n-col)
+
+            for i in range(diag_len):
+                diag.append(mat[row + i][col + i])
+
+            heapify(diag)
+
+            for i in range(diag_len):
+                mat[row + i][col + i] = heappop(diag)
+
+        for row in range(m):
+            sortDiagonal(row, 0)
+
+        for col in range(1, n):
+            sortDiagonal(0, col)
 
         return mat
