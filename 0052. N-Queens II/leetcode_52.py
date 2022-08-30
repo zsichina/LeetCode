@@ -28,3 +28,42 @@ class Solution:
         leftDiagonals = set()
 
         return backtrack(n)
+
+
+class Solution:
+    def __init__(self):
+        self.under_attack_cols = set()
+        self.ua_diag = set()
+        self.ua_anti_diag = set()
+    
+    def add_under_attack(self, row, col):
+        self.under_attack_cols.add(col)
+        self.ua_diag.add(row-col)
+        self.ua_anti_diag.add(row+col)
+        
+    def remove_under_attack(self, row, col):
+        self.under_attack_cols.remove(col)
+        self.ua_diag.remove(row-col)
+        self.ua_anti_diag.remove(row+col)
+    
+    def is_under_attack(self, row, col):
+        if col in self.under_attack_cols or row-col in self.ua_diag or row+col in self.ua_anti_diag:
+            return True
+        return False
+    
+    def backtracking(self, row):
+        if row == self.n:
+            return 1
+        
+        res = 0
+        for col in range(self.n):
+            if not self.is_under_attack(row, col):
+                self.add_under_attack(row, col)
+                res += self.backtracking(row+1)
+                self.remove_under_attack(row, col)
+                
+        return res
+
+    def totalNQueens(self, n: int) -> int:
+        self.n = n
+        return self.backtracking(0)
