@@ -30,6 +30,7 @@
 #        :rtype void
 #        """
 
+
 class Solution:
     def cleanRoom(self, robot):
         """
@@ -37,31 +38,13 @@ class Solution:
         :rtype: None
         """        
         def backtrack(row, col, direction):
-
             robot.clean()
             cleaned.add((row, col))
 
             for i in range(4):
-                if direction == 0:
-                    row -= 1
-                elif direction == 1:
-                    col -= 1
-                elif direction == 2:
-                    row += 1
-                elif direction == 3:
-                    col += 1
-
-                if (row, col) not in cleaned and robot.move():
-                    backtrack(row, col, direction)
-
-                if direction == 0:
-                    row += 1
-                elif direction == 1:
-                    col += 1
-                elif direction == 2:
-                    row -= 1
-                elif direction == 3:
-                    col -= 1
+                r, c = directions[direction]
+                if (row + r, col + c) not in cleaned and robot.move():
+                    backtrack(row + r, col + c, direction)
 
                 direction = (direction + 1)%4
                 if i == 3:
@@ -72,5 +55,6 @@ class Solution:
                 else:
                     robot.turnLeft()
 
+        directions = [(-1, 0), (0, -1), (1, 0), (0, 1)]
         cleaned = set()
         backtrack(0, 0, 0)
