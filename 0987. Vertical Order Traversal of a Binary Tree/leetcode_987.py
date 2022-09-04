@@ -1,5 +1,6 @@
 from typing import List, Optional
 from collections import defaultdict
+import math
 
 
 class TreeNode:
@@ -34,5 +35,33 @@ class Solution:
         for i in range(start, end+1):
             d[i] = sorted(d[i], key=lambda x: (x[0], x[1]))
             res.append([x[1] for x in d[i]])
+
+        return res
+
+
+class Solution:
+    def verticalTraversal(self, root: Optional[TreeNode]) -> List[List[int]]:
+        def dfs(root, row, col):
+            lst.append((col, row, root.val))
+
+            if root.left:
+                dfs(root.left, row+1, col-1)
+
+            if root.right:
+                dfs(root.right, row+1, col+1)
+
+        lst = []
+        dfs(root, 0, 0)
+
+        lst.sort()
+
+        res = []
+        prev_col = -math.inf
+        for i in range(len(lst)):
+            if lst[i][0] != prev_col:
+                res.append([lst[i][2]])
+                prev_col = lst[i][0]
+            else:
+                res[-1].append(lst[i][2])
 
         return res
