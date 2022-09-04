@@ -1,5 +1,5 @@
 from typing import List, Optional
-from collections import defaultdict
+from collections import defaultdict, deque
 import math
 
 
@@ -52,6 +52,37 @@ class Solution:
 
         lst = []
         dfs(root, 0, 0)
+
+        lst.sort()
+
+        res = []
+        prev_col = -math.inf
+        for i in range(len(lst)):
+            if lst[i][0] != prev_col:
+                res.append([lst[i][2]])
+                prev_col = lst[i][0]
+            else:
+                res[-1].append(lst[i][2])
+
+        return res
+
+
+class Solution:
+    def verticalTraversal(self, root: Optional[TreeNode]) -> List[List[int]]:
+        def bfs(root):
+            q = deque([(root, 0, 0)])
+            while q:
+                node, row, col = q.popleft()
+                lst.append((col, row, node.val))
+
+                if node.left:
+                    q.append((node.left, row+1, col-1))
+
+                if node.right:
+                    q.append((node.right, row+1, col+1))
+
+        lst = []
+        bfs(root)
 
         lst.sort()
 
