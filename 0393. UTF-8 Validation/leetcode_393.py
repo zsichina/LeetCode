@@ -22,3 +22,27 @@ class Solution:
                     return False
 
         return character_size == 0
+
+
+class Solution:
+    def validUtf8(self, data: List[int]) -> bool:
+        bits_left = 0
+        for num in data:
+            bit_num = f'{num:08b}'
+            if bits_left == 0:
+                if bit_num.startswith("0"):
+                    continue
+
+                for bit in bit_num:
+                    if bit == "0":
+                        break
+                    bits_left += 1
+
+                if not (1 < bits_left < 5):
+                    return False
+            else:
+                if not bit_num.startswith("10"):
+                    return False
+            bits_left -= 1
+
+        return bits_left == 0
