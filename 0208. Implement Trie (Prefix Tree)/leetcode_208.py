@@ -32,3 +32,33 @@ class Trie:
                 return False
             curr = curr.children[c]
         return True
+
+
+class Trie:
+
+    def __init__(self):
+        self.root = TrieNode()
+
+    def insert(self, word: str) -> None:
+        curr = self.root
+        for c in word:
+            if not curr.children[ord(c)-ord("a")]:
+                curr.children[ord(c)-ord("a")] = TrieNode()
+            curr = curr.children[ord(c)-ord("a")]
+        curr.is_word = True
+
+    def search(self, word: str) -> bool:
+        curr = self.root
+        for c in word:
+            if not curr.children[ord(c)-ord("a")]:
+                return False
+            curr = curr.children[ord(c)-ord("a")]
+        return curr.is_word
+
+    def startsWith(self, prefix: str) -> bool:
+        curr = self.root
+        for c in prefix:
+            if not curr.children[ord(c)-ord("a")]:
+                return False
+            curr = curr.children[ord(c)-ord("a")]
+        return True
