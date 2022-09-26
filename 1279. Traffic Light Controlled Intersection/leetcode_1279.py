@@ -15,11 +15,9 @@ class TrafficLight:
         turnGreen: 'Callable[[], None]', # Use turnGreen() to turn light to green on current road
         crossCar: 'Callable[[], None]'   # Use crossCar() to make car cross the intersection
     ) -> None:
-        
+
         with self.green:
-            if self.dir == 1 and roadId == 2:
-                turnGreen()
-            elif self.dir == 2 and roadId == 1:
+            if self.dir != roadId:
                 turnGreen()
 
             crossCar()
