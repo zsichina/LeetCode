@@ -4,10 +4,8 @@ from threading import Lock
 
 class TrafficLight:
     def __init__(self):
-        self.sn_green = Lock()
-        self.ew_green = Lock()
+        self.green = Lock()
         self.dir = 1
-        self.ew_green.acquire()
 
     def carArrived(
         self,
@@ -18,14 +16,12 @@ class TrafficLight:
         crossCar: 'Callable[[], None]'   # Use crossCar() to make car cross the intersection
     ) -> None:
         
-        if self.dir == 1 and roadId == 2:
-            self.ew_green.release()
-            self.sn_green.acquire()
-            turnGreen()
-        elif self.dir == 2 and roadId == 1:
-            self.ew_green.acquire()
-            self.sn_green.release()
-            turnGreen()
+        with self.green:
+            print(roadId)
+            if self.dir == 1 and roadId == 2:
+                turnGreen()
+            elif self.dir == 2 and roadId == 1:
+                turnGreen()
 
-        crossCar()
-        self.dir = roadId
+            crossCar()
+            self.dir = roadId
