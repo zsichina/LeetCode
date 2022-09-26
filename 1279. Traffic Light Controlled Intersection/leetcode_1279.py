@@ -17,7 +17,6 @@ class TrafficLight:
     ) -> None:
         
         with self.green:
-            print(roadId)
             if self.dir == 1 and roadId == 2:
                 turnGreen()
             elif self.dir == 2 and roadId == 1:
