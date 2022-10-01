@@ -12,3 +12,20 @@ class Solution:
         elif 1 <= int(s[0]) <= 26:
             return self.numDecodings(s[1:])
         return 0
+
+
+class Solution:
+    def numDecodings(self, s: str) -> int:
+        @lru_cache()
+        def helper(idx, s, n):
+            if idx == n:
+                return 1
+            elif idx > n or s[idx] == "0":
+                return 0
+
+            res = helper(idx+1, s, n)
+            if 0 < int(s[idx:idx+2]) < 27:
+                res += helper(idx+2, s, n)
+            return res
+
+        return helper(0, s, len(s))
