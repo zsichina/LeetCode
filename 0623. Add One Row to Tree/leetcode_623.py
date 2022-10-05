@@ -35,3 +35,33 @@ class Solution:
         dfs(root, depth-1)
         
         return root
+
+
+class Solution:
+    def addOneRow(self, root: Optional[TreeNode], val: int, depth: int) -> Optional[TreeNode]:
+        if depth == 1:
+            node = TreeNode(val)
+            node.left = root
+            return node
+
+        d = [(root, depth-1)]
+
+        while d:
+            node, depth = d.pop()
+
+            if node.left:
+                d.append((node.left, depth-1))
+
+            if node.right:
+                d.append((node.right, depth-1))
+
+            if depth == 1:
+                temp = node.left
+                node.left = TreeNode(val)
+                node.left.left = temp
+
+                temp = node.right
+                node.right = TreeNode(val)
+                node.right.right = temp
+
+        return root
