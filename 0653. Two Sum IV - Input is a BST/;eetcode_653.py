@@ -1,3 +1,4 @@
+from collections import deque
 from typing import Optional
 
 
@@ -44,5 +45,25 @@ class Solution:
 
           if node.right:
               stack.append(node.right)
+            
+        return False
+
+
+class Solution:
+    def findTarget(self, root: Optional[TreeNode], k: int) -> bool:
+        dp = set()
+        de = deque([root])
+        while de:
+          node = de.popleft()
+          if node.val in dp:
+            return True
+
+          dp.add(k-node.val)
+
+          if node.left:
+              de.append(node.left)
+
+          if node.right:
+              de.append(node.right)
             
         return False
