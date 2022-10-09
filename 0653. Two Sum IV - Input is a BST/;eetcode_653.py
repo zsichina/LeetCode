@@ -26,3 +26,23 @@ class Solution:
           return False
 
         return dfs(root)
+
+
+class Solution:
+    def findTarget(self, root: Optional[TreeNode], k: int) -> bool:
+        dp = set()
+        stack = [root]
+        while stack:
+          node = stack.pop()
+          if node.val in dp:
+            return True
+
+          dp.add(k-node.val)
+
+          if node.left:
+              stack.append(node.left)
+
+          if node.right:
+              stack.append(node.right)
+            
+        return False
