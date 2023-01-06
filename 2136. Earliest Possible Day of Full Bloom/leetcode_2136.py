@@ -6,8 +6,8 @@ class Solution:
         lst = sorted(zip(growTime, plantTime), reverse=True)
         spent = rem = 0
         for g, p in lst:
-          spent += p
-          rem = max(0, rem-p)
-          rem = max(rem, g)
+            spent += p
+            rem = max(0, rem - p)
+            rem = max(rem, g)
 
         return spent + rem

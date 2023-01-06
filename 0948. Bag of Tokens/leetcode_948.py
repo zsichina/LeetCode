@@ -4,7 +4,7 @@ from typing import List
 class Solution:
     def bagOfTokensScore(self, tokens: List[int], power: int) -> int:
         tokens.sort()
-        start, end = 0, len(tokens)-1
+        start, end = 0, len(tokens) - 1
         score, max_score = 0, 0
         while start <= end:
             if power >= tokens[start]:

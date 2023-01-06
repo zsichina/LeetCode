@@ -16,4 +16,4 @@ class Solution(object):
     def isPowerOfTwo(self, n):
         if n <= 0:
             return False
-        return bin(n).count('1') == 1
+        return bin(n).count("1") == 1

@@ -5,7 +5,7 @@ class Solution:
     def validUtf8(self, data: List[int]) -> bool:
         character_size = 0
         for num in data:
-            num = f'{num:08b}'
+            num = f"{num:08b}"
             if character_size == 0:
                 if num.startswith("11111") or num.startswith("10"):
                     return False
@@ -28,7 +28,7 @@ class Solution:
     def validUtf8(self, data: List[int]) -> bool:
         bits_left = 0
         for num in data:
-            bit_num = f'{num:08b}'
+            bit_num = f"{num:08b}"
             if bits_left == 0:
                 if bit_num.startswith("0"):
                     continue

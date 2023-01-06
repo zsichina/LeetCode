@@ -1,4 +1,6 @@
+from collections import defaultdict
 from typing import List, Optional
+
 
 # Definition for a binary tree node.
 class TreeNode:
@@ -6,6 +8,7 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
+
 
 class Solution:
     def createBinaryTree(self, descriptions: List[List[int]]) -> Optional[TreeNode]:

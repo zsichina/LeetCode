@@ -1,5 +1,6 @@
 from typing import List
 
+
 class Solution:
     def sortColors(self, nums: List[int]) -> None:
         """
@@ -22,7 +23,7 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        left, right = 0, len(nums)-1
+        left, right = 0, len(nums) - 1
         pointer = 0
         while pointer <= right:
             if nums[pointer] == 0:

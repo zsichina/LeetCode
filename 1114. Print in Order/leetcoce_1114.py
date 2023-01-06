@@ -1,5 +1,5 @@
-from typing import Callable
 from threading import Lock
+from typing import Callable
 
 
 class Foo:
@@ -9,18 +9,15 @@ class Foo:
         self.firstJobDone.acquire()
         self.secondJobDone.acquire()
 
-
-    def first(self, printFirst: 'Callable[[], None]') -> None:
+    def first(self, printFirst: "Callable[[], None]") -> None:
         printFirst()
         self.firstJobDone.release()
 
-
-    def second(self, printSecond: 'Callable[[], None]') -> None:
-         with self.firstJobDone:
+    def second(self, printSecond: "Callable[[], None]") -> None:
+        with self.firstJobDone:
             printSecond()
             self.secondJobDone.release()
 
-
-    def third(self, printThird: 'Callable[[], None]') -> None:
+    def third(self, printThird: "Callable[[], None]") -> None:
         with self.secondJobDone:
             printThird()

@@ -9,11 +9,11 @@ class TreeNode:
 
 
 class Solution:
-    def pseudoPalindromicPaths (self, root: Optional[TreeNode]) -> int:
+    def pseudoPalindromicPaths(self, root: Optional[TreeNode]) -> int:
         def dfs(root, dp, odd_nums):
             nonlocal ans
             if root.val in dp:
-                if dp[root.val]%2 == 0:
+                if dp[root.val] % 2 == 0:
                     odd_nums += 1
                 else:
                     odd_nums -= 1
@@ -32,7 +32,7 @@ class Solution:
                 ans += 1
 
             dp[root.val] -= 1
-            if dp[root.val]%2 == 0:
+            if dp[root.val] % 2 == 0:
                 odd_nums -= 1
             else:
                 odd_nums += 1

@@ -1,9 +1,10 @@
-from typing import List
 from collections import Counter
+from typing import List
+
 
 class Solution:
     def minSetSize(self, arr: List[int]) -> int:
-        half = (len(arr) + 1)//2
+        half = (len(arr) + 1) // 2
         counts = sorted(Counter(arr).values(), reverse=True)
         sm = 0
         for idx, val in enumerate(counts):
@@ -14,7 +15,7 @@ class Solution:
 
 class Solution:
     def minSetSize(self, arr: List[int]) -> int:
-        half = (len(arr) + 1)//2
+        half = (len(arr) + 1) // 2
         counts = Counter(arr).most_common()
         sm = 0
         cnt = 0

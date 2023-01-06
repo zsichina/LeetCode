@@ -5,7 +5,7 @@ class Solution:
         divisor = abs(divisor)
         cnt = 0
         coeff = 1
-        divisorWithCoeff  = divisor
+        divisorWithCoeff = divisor
         coeffs = []
         divisors = []
 
@@ -15,7 +15,7 @@ class Solution:
             coeff += coeff
             divisorWithCoeff += divisorWithCoeff
 
-        for i in range(len(divisors)-1, -1, -1):
+        for i in range(len(divisors) - 1, -1, -1):
             while dividend >= divisors[i]:
                 dividend -= divisors[i]
                 if sign == 1:

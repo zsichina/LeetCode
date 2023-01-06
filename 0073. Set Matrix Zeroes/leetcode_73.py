@@ -1,5 +1,6 @@
 from typing import List
 
+
 class Solution:
     def setZeroes(self, matrix: List[List[int]]) -> None:
         """
@@ -24,6 +25,7 @@ class Solution:
                 matrix[i][j] = 0
 
         print(matrix)
+
 
 class Solution:
     def setZeroes(self, matrix: List[List[int]]) -> None:
@@ -54,4 +56,3 @@ class Solution:
         if set_first_col:
             for i in range(m):
                 matrix[i][0] = 0
-

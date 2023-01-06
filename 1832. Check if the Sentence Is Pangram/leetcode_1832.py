@@ -6,8 +6,8 @@ class Solution:
         counter = Counter(sentence)
 
         for i in range(26):
-          if chr(ord("a")+i) not in counter:
-            return False
+            if chr(ord("a") + i) not in counter:
+                return False
 
         return True
 
@@ -17,9 +17,9 @@ class Solution:
         seen = 0
 
         for curr_char in sentence:
-            mapped_index = ord(curr_char) - ord('a')
+            mapped_index = ord(curr_char) - ord("a")
 
-            curr_bit = 1 << mapped_index 
+            curr_bit = 1 << mapped_index
 
             seen |= curr_bit
 

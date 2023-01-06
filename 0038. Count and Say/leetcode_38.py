@@ -1,6 +1,7 @@
 class Solution:
     def countAndSay(self, n: int) -> str:
-        if n == 1: return "1"
+        if n == 1:
+            return "1"
         toSay = self.countAndSay(n - 1)
         currChar = toSay[0]
         cnt = 0

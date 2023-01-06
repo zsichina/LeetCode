@@ -20,11 +20,11 @@ class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
         if len(ransomNote) > len(magazine):
             return False
-        
+
         counterR = Counter(ransomNote)
         counterM = Counter(magazine)
         for key, val in counterR.items():
             if val > counterM[key]:
                 return False
-            
+
         return True

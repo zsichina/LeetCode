@@ -23,9 +23,9 @@ class Solution:
             if root.right:
                 right_sum = dfs(root.right)
 
-            max_sum = max(max_sum, sm, sm+left_sum, sm+right_sum, sm+left_sum+right_sum)
+            max_sum = max(max_sum, sm, sm + left_sum, sm + right_sum, sm + left_sum + right_sum)
 
-            return max(sm, sm+left_sum, sm+right_sum)
+            return max(sm, sm + left_sum, sm + right_sum)
 
         max_sum = -1000
         dfs(root)

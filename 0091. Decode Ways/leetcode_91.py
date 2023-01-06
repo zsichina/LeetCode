@@ -1,5 +1,6 @@
 from functools import lru_cache
 
+
 class Solution:
     @lru_cache
     def numDecodings(self, s: str) -> int:
@@ -23,9 +24,9 @@ class Solution:
             elif idx > n or s[idx] == "0":
                 return 0
 
-            res = helper(idx+1, s, n)
-            if 0 < int(s[idx:idx+2]) < 27:
-                res += helper(idx+2, s, n)
+            res = helper(idx + 1, s, n)
+            if 0 < int(s[idx : idx + 2]) < 27:
+                res += helper(idx + 2, s, n)
             return res
 
         return helper(0, s, len(s))
@@ -42,7 +43,7 @@ class Solution:
             current = 0
             if s[i] != "0":
                 current = one_back
-            two_digit = int(s[i - 1: i + 1])
+            two_digit = int(s[i - 1 : i + 1])
             if two_digit >= 10 and two_digit <= 26:
                 current += two_back
             two_back = one_back

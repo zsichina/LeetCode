@@ -1,5 +1,6 @@
 from typing import List
 
+
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
         def isCommon(pref):
@@ -8,8 +9,9 @@ class Solution:
                     return False
             return True
 
-        if len(strs) == 0: return prefix
         prefix = min(strs, key=len)
+        if len(strs) == 0:
+            return prefix
 
         while prefix:
             if isCommon(prefix):

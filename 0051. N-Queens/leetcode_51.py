@@ -1,25 +1,31 @@
 from typing import List
 
+
 class Solution:
     def solveNQueens(self, n: int) -> List[List[str]]:
         def backtrack(q):
             if q == 0:
-                ans.append(matrix1[:])
+                ans.append(matrix[:])
                 return
 
             for i in range(n):
-                if not n-q in rows and not i in cols and not n-q-i in rightDiagonals and not q-i in leftDiagonals:
-                    rows.add(n-q)
+                if (
+                    n - q not in rows
+                    and i not in cols
+                    and n - q - i not in rightDiagonals
+                    and q - i not in leftDiagonals
+                ):
+                    rows.add(n - q)
                     cols.add(i)
-                    rightDiagonals.add(n-q-i)
-                    leftDiagonals.add(q-i)
-                    matrix1.append("."*i+"Q"+"."*(n-i-1))
-                    backtrack(q-1)
-                    rows.discard(n-q)
+                    rightDiagonals.add(n - q - i)
+                    leftDiagonals.add(q - i)
+                    matrix.append("." * i + "Q" + "." * (n - i - 1))
+                    backtrack(q - 1)
+                    rows.discard(n - q)
                     cols.discard(i)
-                    rightDiagonals.discard(n-q-i)
-                    leftDiagonals.discard(q-i)
-                    matrix1.pop()
+                    rightDiagonals.discard(n - q - i)
+                    leftDiagonals.discard(q - i)
+                    matrix.pop()
             return
 
         ans = []
@@ -29,8 +35,7 @@ class Solution:
         rightDiagonals = set()
         leftDiagonals = set()
 
-        matrix = [ "."*n for x in range(n)]
-        matrix1 = []
+        matrix = []
         backtrack(n)
 
         return ans

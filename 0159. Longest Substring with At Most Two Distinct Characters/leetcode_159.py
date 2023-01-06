@@ -16,6 +16,6 @@ class Solution:
                 slow += 1
 
             fast += 1
-            max_len = max(max_len, fast-slow)
+            max_len = max(max_len, fast - slow)
 
         return max_len

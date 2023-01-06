@@ -1,7 +1,7 @@
 from collections import defaultdict
 
-class SnapshotArray:
 
+class SnapshotArray:
     def __init__(self, length: int):
         self.changes = {}
         self.snaps = defaultdict(dict)
@@ -23,7 +23,6 @@ class SnapshotArray:
 
 
 class SnapshotArray:
-
     def __init__(self, length: int):
         self.snaps = defaultdict(list)
         self.snap_cnt = 0
@@ -41,11 +40,11 @@ class SnapshotArray:
     def get(self, index: int, snap_id: int) -> int:
         start, end, last_snap_id = 0, len(self.snaps[index]) - 1, -1
         while start <= end:
-            mid = (start + end)//2
+            mid = (start + end) // 2
             if self.snaps[index][mid][0] <= snap_id:
                 start = mid + 1
                 last_snap_id = mid
             else:
-                end = mid -1
-                    
+                end = mid - 1
+
         return 0 if last_snap_id == -1 else self.snaps[index][last_snap_id][1]

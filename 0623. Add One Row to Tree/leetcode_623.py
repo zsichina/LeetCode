@@ -1,4 +1,4 @@
-from typing import  Optional
+from typing import Optional
 
 
 class TreeNode:
@@ -26,14 +26,13 @@ class Solution:
                 root.right.right = temp
 
             if root.left:
-                dfs(root.left, depth-1)
+                dfs(root.left, depth - 1)
 
             if root.right:
-                dfs(root.right, depth-1)
+                dfs(root.right, depth - 1)
 
+        dfs(root, depth - 1)
 
-        dfs(root, depth-1)
-        
         return root
 
 
@@ -44,16 +43,16 @@ class Solution:
             node.left = root
             return node
 
-        d = [(root, depth-1)]
+        d = [(root, depth - 1)]
 
         while d:
             node, depth = d.pop()
 
             if node.left:
-                d.append((node.left, depth-1))
+                d.append((node.left, depth - 1))
 
             if node.right:
-                d.append((node.right, depth-1))
+                d.append((node.right, depth - 1))
 
             if depth == 1:
                 temp = node.left

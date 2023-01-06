@@ -1,5 +1,5 @@
-from typing import Callable
 from threading import Lock
+from typing import Callable
 
 
 class FooBar:
@@ -9,16 +9,15 @@ class FooBar:
         self.bar_done = Lock()
         self.foo_done.acquire()
 
-
-    def foo(self, printFoo: 'Callable[[], None]') -> None:
+    def foo(self, printFoo: "Callable[[], None]") -> None:
 
         for i in range(self.n):
             self.bar_done.acquire()
             printFoo()
             self.foo_done.release()
 
-    def bar(self, printBar: 'Callable[[], None]') -> None:
-        
+    def bar(self, printBar: "Callable[[], None]") -> None:
+
         for i in range(self.n):
             self.foo_done.acquire()
             printBar()

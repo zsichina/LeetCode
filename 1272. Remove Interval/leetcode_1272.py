@@ -11,6 +11,6 @@ class Solution:
                 if interval[0] < toBeRemoved[0]:
                     res.append([interval[0], toBeRemoved[0]])
                 if interval[1] > toBeRemoved[1]:
-                    res.append([toBeRemoved[1] , interval[1]])     
+                    res.append([toBeRemoved[1], interval[1]])
 
         return res

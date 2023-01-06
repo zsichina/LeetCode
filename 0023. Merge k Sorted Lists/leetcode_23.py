@@ -1,5 +1,5 @@
+from heapq import heapify, heappop, heappush
 from typing import List, Optional
-from heapq import heapify, heappush, heappop
 
 
 class ListNode:

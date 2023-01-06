@@ -1,8 +1,10 @@
 from typing import List
 
+
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        if len(nums) == 1: return 1
+        if len(nums) == 1:
+            return 1
 
         curr = 0
         for j in range(1, len(nums)):

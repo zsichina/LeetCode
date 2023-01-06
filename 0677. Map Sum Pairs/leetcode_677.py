@@ -7,7 +7,6 @@ class TrieNode:
 
 
 class MapSum:
-
     def __init__(self):
         self.root = TrieNode()
 

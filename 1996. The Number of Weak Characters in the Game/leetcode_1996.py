@@ -1,13 +1,11 @@
+from heapq import heapify, heappop, heappush
 from typing import List
-from heapq import heapify, heappush, heappop
 
 
 class Solution:
     def numberOfWeakCharacters(self, properties: List[List[int]]) -> int:
-        start, end, n, res = 0, 0, len(properties), 0
-
+        res, max_heap = 0, []
         heapify(properties)
-        max_heap = []
         heapify(max_heap)
         for attack, defence in properties:
             heappush(max_heap, (-defence, -attack))
@@ -32,11 +30,11 @@ class Solution:
         for attack, defence in properties:
             max_defence[attack] = max(max_defence[attack], defence)
 
-        for i in range(max_attack, -1,-1):
-            max_defence[i] = max(max_defence[i], max_defence[i+1])
+        for i in range(max_attack, -1, -1):
+            max_defence[i] = max(max_defence[i], max_defence[i + 1])
 
         for attack, defence in properties:
-            if max_defence[attack+1] > defence:
+            if max_defence[attack + 1] > defence:
                 res += 1
 
         return res

@@ -1,4 +1,6 @@
+from collections import defaultdict
 from typing import List
+
 
 class Solution:
     def mostFrequent(self, nums: List[int], key: int) -> int:

@@ -31,7 +31,7 @@ class Solution:
 
             return pointer
 
-        p1, p2 = len(s)-1, len(t)-1
+        p1, p2 = len(s) - 1, len(t) - 1
         while p1 >= 0 or p2 >= 0:
             p1 = skip(s, p1)
             p2 = skip(t, p2)

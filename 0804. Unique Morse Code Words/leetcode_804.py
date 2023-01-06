@@ -4,9 +4,32 @@ from typing import List
 class Solution:
     def uniqueMorseRepresentations(self, words: List[str]) -> int:
         morse_code_map = [
-            ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..",
-            ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.",
-            "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..",
+            ".-",
+            "-...",
+            "-.-.",
+            "-..",
+            ".",
+            "..-.",
+            "--.",
+            "....",
+            "..",
+            ".---",
+            "-.-",
+            ".-..",
+            "--",
+            "-.",
+            "---",
+            ".--.",
+            "--.-",
+            ".-.",
+            "...",
+            "-",
+            "..-",
+            "...-",
+            ".--",
+            "-..-",
+            "-.--",
+            "--..",
         ]
         transformed_words = set()
         offset = ord("a")
@@ -23,14 +46,34 @@ class Solution:
 class Solution:
     def uniqueMorseRepresentations(self, words: List[str]) -> int:
         morse_code_map = [
-            ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..",
-            ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.",
-            "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..",
+            ".-",
+            "-...",
+            "-.-.",
+            "-..",
+            ".",
+            "..-.",
+            "--.",
+            "....",
+            "..",
+            ".---",
+            "-.-",
+            ".-..",
+            "--",
+            "-.",
+            "---",
+            ".--.",
+            "--.-",
+            ".-.",
+            "...",
+            "-",
+            "..-",
+            "...-",
+            ".--",
+            "-..-",
+            "-.--",
+            "--..",
         ]
 
-        transformed_words = {
-            "".join(morse_code_map[ord(l) - ord("a")] for l in w) for w in words
-        }
+        transformed_words = {"".join(morse_code_map[ord(letter) - ord("a")] for letter in word) for word in words}
 
         return len(transformed_words)
-

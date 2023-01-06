@@ -1,9 +1,9 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        if len(s)%2 != 0:
+        if len(s) % 2 != 0:
             return False
 
-        d = {"(" : ")", "[" : "]", "{" : "}"}
+        d = {"(": ")", "[": "]", "{": "}"}
         stack = []
         for bracket in s:
             if bracket in d:

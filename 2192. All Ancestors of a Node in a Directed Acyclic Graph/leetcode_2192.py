@@ -1,4 +1,7 @@
+from collections import defaultdict
+from functools import lru_cache
 from typing import List
+
 
 class Solution:
     def getAncestors(self, n: int, edges: List[List[int]]) -> List[List[int]]:

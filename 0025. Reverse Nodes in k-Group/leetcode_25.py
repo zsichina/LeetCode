@@ -1,13 +1,16 @@
 from typing import Optional
 
+
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
 
+
 class Solution:
     def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
-        if not head: return None
+        if not head:
+            return None
         arr = []
         curr = head
         for i in range(k):

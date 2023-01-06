@@ -1,5 +1,5 @@
-from typing import List
 from collections import defaultdict
+from typing import List
 
 
 class Solution:

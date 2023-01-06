@@ -8,17 +8,17 @@ class Solution:
             elif dominoes[i] == "L":
                 if dominoes[start] == "L":
                     for j in range(cnt):
-                        dominoes[start+1+j] = "L"
+                        dominoes[start + 1 + j] = "L"
                 elif dominoes[start] == "R":
-                    for j in range(cnt//2):
-                        dominoes[start+1+j] = "R"
-                        dominoes[i-1-j] = "L"
+                    for j in range(cnt // 2):
+                        dominoes[start + 1 + j] = "R"
+                        dominoes[i - 1 - j] = "L"
                 start = i
                 cnt = 0
             else:
                 if dominoes[start] == "R":
                     for j in range(cnt):
-                        dominoes[start+1+j] = "R"
+                        dominoes[start + 1 + j] = "R"
                 start = i
                 cnt = 0
 
@@ -35,11 +35,11 @@ class Solution:
             else:
                 if dominoes[i] == dominoes[start]:
                     for j in range(cnt):
-                        dominoes[start+1+j] = dominoes[start]
+                        dominoes[start + 1 + j] = dominoes[start]
                 elif dominoes[start] == "R":
-                    for j in range(cnt//2):
-                        dominoes[start+1+j] = "R"
-                        dominoes[i-1-j] = "L" 
+                    for j in range(cnt // 2):
+                        dominoes[start + 1 + j] = "R"
+                        dominoes[i - 1 - j] = "L"
                 start = i
                 cnt = 0
 

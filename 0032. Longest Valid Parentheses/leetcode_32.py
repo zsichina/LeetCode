@@ -9,8 +9,8 @@ class Solution:
                 left += 1
             else:
                 right += 1
-            if left == right and 2*left > longest:
-                longest = 2*left
+            if left == right and 2 * left > longest:
+                longest = 2 * left
             elif right > left:
                 left = right = 0
 
@@ -20,8 +20,8 @@ class Solution:
                 left += 1
             else:
                 right += 1
-            if left == right and 2*left > longest:
-                longest = 2*left
+            if left == right and 2 * left > longest:
+                longest = 2 * left
             elif right < left:
                 left = right = 0
 

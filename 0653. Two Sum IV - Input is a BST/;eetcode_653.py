@@ -12,19 +12,20 @@ class TreeNode:
 class Solution:
     def findTarget(self, root: Optional[TreeNode], k: int) -> bool:
         dp = set()
+
         def dfs(root):
-          if root.val in dp:
-            return True
+            if root.val in dp:
+                return True
 
-          dp.add(k-root.val)
+            dp.add(k - root.val)
 
-          if root.left and dfs(root.left):
-              return True
+            if root.left and dfs(root.left):
+                return True
 
-          if root.right and dfs(root.right):
-              return True
-            
-          return False
+            if root.right and dfs(root.right):
+                return True
+
+            return False
 
         return dfs(root)
 
@@ -34,18 +35,18 @@ class Solution:
         dp = set()
         stack = [root]
         while stack:
-          node = stack.pop()
-          if node.val in dp:
-            return True
+            node = stack.pop()
+            if node.val in dp:
+                return True
 
-          dp.add(k-node.val)
+            dp.add(k - node.val)
 
-          if node.left:
-              stack.append(node.left)
+            if node.left:
+                stack.append(node.left)
 
-          if node.right:
-              stack.append(node.right)
-            
+            if node.right:
+                stack.append(node.right)
+
         return False
 
 
@@ -54,16 +55,16 @@ class Solution:
         dp = set()
         de = deque([root])
         while de:
-          node = de.popleft()
-          if node.val in dp:
-            return True
+            node = de.popleft()
+            if node.val in dp:
+                return True
 
-          dp.add(k-node.val)
+            dp.add(k - node.val)
 
-          if node.left:
-              de.append(node.left)
+            if node.left:
+                de.append(node.left)
 
-          if node.right:
-              de.append(node.right)
-            
+            if node.right:
+                de.append(node.right)
+
         return False

@@ -3,7 +3,8 @@ from typing import List
 
 # Remove this line, before executing on LeetCode
 # The read4 API is already defined for you.
-def read4(buf4: List[str]) -> int:...
+def read4(buf4: List[str]) -> int:
+    ...
 
 
 class Solution:

@@ -1,42 +1,42 @@
 class Solution:
     def intToRoman(self, num: int) -> str:
         roman = ""
-        if num//1000 > 0:
-            for i in range(num//1000):
+        if num // 1000 > 0:
+            for i in range(num // 1000):
                 roman += "M"
-        num = num%1000
+        num = num % 1000
 
-        if num//100 == 9:
+        if num // 100 == 9:
             roman += "CM"
-        elif num//100 >=5:
+        elif num // 100 >= 5:
             roman += "D"
-            for i in range(5, num//100):
+            for i in range(5, num // 100):
                 roman += "C"
-        elif num//100 == 4:
+        elif num // 100 == 4:
             roman += "CD"
         else:
-            for i in range(num//100):
+            for i in range(num // 100):
                 roman += "C"
-        num = num%100
+        num = num % 100
 
-        if num//10 == 9:
+        if num // 10 == 9:
             roman += "XC"
-        elif num//10 >= 5:
+        elif num // 10 >= 5:
             roman += "L"
-            for i in range(5, num//10):
+            for i in range(5, num // 10):
                 roman += "X"
-        elif num//10 == 4:
+        elif num // 10 == 4:
             roman += "XL"
         else:
-            for i in range(num//10):
+            for i in range(num // 10):
                 roman += "X"
-        num = num%10
+        num = num % 10
 
         if num == 9:
             roman += "IX"
         elif num >= 5:
             roman += "V"
-            for i in range(5,num):
+            for i in range(5, num):
                 roman += "I"
         elif num == 4:
             roman += "IV"
@@ -45,6 +45,7 @@ class Solution:
                 roman += "I"
 
         return roman
+
 
 # class Solution:
 #   def intToRoman(self, num):

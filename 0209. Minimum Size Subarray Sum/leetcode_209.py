@@ -1,5 +1,5 @@
-from typing import List
 import math
+from typing import List
 
 
 class Solution:
@@ -16,6 +16,6 @@ class Solution:
                 start += 1
 
             if sm >= target:
-                min_len = min(min_len, end-start)
+                min_len = min(min_len, end - start)
 
         return min_len if min_len < math.inf else 0

@@ -9,7 +9,7 @@ class Solution:
         total = 0
         curr = head
         while curr:
-            total = total*2+curr.val
+            total = total * 2 + curr.val
             curr = curr.next
 
         return total

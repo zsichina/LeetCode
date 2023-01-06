@@ -6,7 +6,7 @@ class Solution:
         dp = {}
         for idx, source, target in zip(indices, sources, targets):
             length = len(source)
-            if s[idx:idx+length] == source:
+            if s[idx : idx + length] == source:
                 dp[idx] = (length, target)
 
         res = []

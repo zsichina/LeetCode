@@ -1,5 +1,6 @@
 from typing import List
 
+
 class Solution:
     def sortJumbled(self, mapping: List[int], nums: List[int]) -> List[int]:
         def mapNum(num):

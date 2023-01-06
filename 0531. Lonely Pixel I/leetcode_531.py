@@ -8,15 +8,15 @@ class Solution:
         col = [0 for _ in range(n)]
 
         for i in range(m):
-          for j in range(n):
-            if picture[i][j] == "B":
-              row[i] += 1
-              col[j] += 1
+            for j in range(n):
+                if picture[i][j] == "B":
+                    row[i] += 1
+                    col[j] += 1
 
         res = 0
         for i in range(m):
-          for j in range(n):
-            if picture[i][j] == "B" and row[i] == 1 and col[j] == 1:
-              res += 1
-              
+            for j in range(n):
+                if picture[i][j] == "B" and row[i] == 1 and col[j] == 1:
+                    res += 1
+
         return res

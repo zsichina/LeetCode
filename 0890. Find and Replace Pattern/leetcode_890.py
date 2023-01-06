@@ -1,10 +1,11 @@
 from typing import List
 
+
 class Solution:
     def findAndReplacePattern(self, words: List[str], pattern: str) -> List[str]:
-        
+
         res = []
-        
+
         for word in words:
             word_dict = {}
             pattern_dict = {}
@@ -14,12 +15,11 @@ class Solution:
                     word_dict[word[i]] = pattern[i]
                 if pattern[i] not in pattern_dict:
                     pattern_dict[pattern[i]] = word[i]
-                
+
                 if word_dict[word[i]] != pattern[i] or pattern_dict[pattern[i]] != word[i]:
-                        matches = False
-                        break
+                    matches = False
+                    break
             if matches:
                 res.append(word)
-                
-        return res
 
+        return res

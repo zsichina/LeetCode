@@ -10,19 +10,19 @@ class Solution:
 
         for i in range(m):
             diag = []
-            for j in range(min(m-i, n)):
-                diag.append(mat[i+j][j])
+            for j in range(min(m - i, n)):
+                diag.append(mat[i + j][j])
             diag.sort(reverse=True)
-            for j in range(min(m-i, n)):
-                mat[i+j][j] = diag.pop()
+            for j in range(min(m - i, n)):
+                mat[i + j][j] = diag.pop()
 
         for j in range(1, n):
             diag = []
-            for i in range(min(m, n-j)):
-                diag.append(mat[i][j+i])
+            for i in range(min(m, n - j)):
+                diag.append(mat[i][j + i])
             diag.sort(reverse=True)
-            for i in range(min(m, n-j)):
-                mat[i][j+i] = diag.pop()
+            for i in range(min(m, n - j)):
+                mat[i][j + i] = diag.pop()
 
         return mat
 
@@ -34,7 +34,7 @@ class Solution:
 
         def sortDiagonal(row, col):
             diag = []
-            diag_len = min(m-row, n-col)
+            diag_len = min(m - row, n - col)
 
             for i in range(diag_len):
                 diag.append(mat[row + i][col + i])
@@ -60,7 +60,7 @@ class Solution:
 
         def sortDiagonal(row, col):
             diag = []
-            diag_len = min(m-row, n-col)
+            diag_len = min(m - row, n - col)
 
             for i in range(diag_len):
                 diag.append(mat[row + i][col + i])
@@ -80,7 +80,6 @@ class Solution:
             for i in range(minimum, maximum + 1):
                 sorted_nums.extend([i] * counts[i])
             return sorted_nums
-
 
         for row in range(m):
             sortDiagonal(row, 0)

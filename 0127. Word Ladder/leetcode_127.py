@@ -1,5 +1,5 @@
-from typing import List
 from collections import defaultdict, deque
+from typing import List
 
 
 class Solution:
@@ -11,7 +11,7 @@ class Solution:
         all_combs = defaultdict(list)
         for word in wordList:
             for i in range(n):
-                all_combs[word[:i] + "*" + word[i+1:]].append(word)
+                all_combs[word[:i] + "*" + word[i + 1 :]].append(word)
 
         visited = set()
         level = 1
@@ -22,8 +22,8 @@ class Solution:
                 return level
             visited.add(currWord)
             for i in range(n):
-                for cand in all_combs[currWord[:i] + "*" + currWord[i+1:]]:
+                for cand in all_combs[currWord[:i] + "*" + currWord[i + 1 :]]:
                     if cand not in visited:
-                        q.append((cand, level+1))
+                        q.append((cand, level + 1))
 
         return 0

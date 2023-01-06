@@ -4,6 +4,7 @@ class TreeNode:
         self.left = left
         self.right = right
 
+
 class Solution:
     def goodNodes(self, root: TreeNode) -> int:
         def dfs(root, max_val):

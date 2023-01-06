@@ -10,8 +10,8 @@ class Solution:
         def all_valid_suffixes(word):
             valid_suffixes = []
             for i in range(len(word)):
-                if word[:i+1] == word[:i+1][::-1]:
-                    valid_suffixes.append(word[i + 1:])
+                if word[: i + 1] == word[: i + 1][::-1]:
+                    valid_suffixes.append(word[i + 1 :])
             return valid_suffixes
 
         word_lookup = {word: i for i, word in enumerate(words)}

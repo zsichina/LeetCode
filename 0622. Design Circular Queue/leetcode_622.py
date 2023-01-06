@@ -1,5 +1,7 @@
-class MyCircularQueue:
+from threading import Lock
 
+
+class MyCircularQueue:
     def __init__(self, k: int):
         self.size = k
         self.circularQueue = [-1 for _ in range(k)]
@@ -10,21 +12,21 @@ class MyCircularQueue:
         if self.isFull():
             return False
         self.circularQueue[self.end] = value
-        self.end = (self.end+1)%self.size
+        self.end = (self.end + 1) % self.size
         return True
 
     def deQueue(self) -> bool:
         if self.isEmpty():
             return False
         self.circularQueue[self.start] = -1
-        self.start = (self.start+1)%self.size
+        self.start = (self.start + 1) % self.size
         return True
 
     def Front(self) -> int:
         return self.circularQueue[self.start]
 
     def Rear(self) -> int:
-        return self.circularQueue[self.end-1]
+        return self.circularQueue[self.end - 1]
 
     def isEmpty(self) -> bool:
         if self.circularQueue[self.start] == -1:
@@ -37,12 +39,7 @@ class MyCircularQueue:
         return True
 
 
-
-from threading import Lock
-
-
 class MyCircularQueue:
-
     def __init__(self, k: int):
         self.size = k
         self.circularQueue = [-1 for _ in range(k)]
@@ -55,7 +52,7 @@ class MyCircularQueue:
             if self.isFull():
                 return False
             self.circularQueue[self.end] = value
-            self.end = (self.end+1)%self.size
+            self.end = (self.end + 1) % self.size
         return True
 
     def deQueue(self) -> bool:
@@ -63,14 +60,14 @@ class MyCircularQueue:
             if self.isEmpty():
                 return False
             self.circularQueue[self.start] = -1
-            self.start = (self.start+1)%self.size
+            self.start = (self.start + 1) % self.size
         return True
 
     def Front(self) -> int:
         return self.circularQueue[self.start]
 
     def Rear(self) -> int:
-        return self.circularQueue[self.end-1]
+        return self.circularQueue[self.end - 1]
 
     def isEmpty(self) -> bool:
         if self.circularQueue[self.start] == -1:

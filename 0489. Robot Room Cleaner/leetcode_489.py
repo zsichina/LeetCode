@@ -2,7 +2,7 @@
 # This is the robot's control interface.
 # You should not implement it, or speculate about its implementation
 # """
-#class Robot:
+# class Robot:
 #    def move(self):
 #        """
 #        Returns true if the cell in front is open and robot moves into the cell.
@@ -36,7 +36,8 @@ class Solution:
         """
         :type robot: Robot
         :rtype: None
-        """        
+        """
+
         def backtrack(row, col, direction):
             robot.clean()
             cleaned.add((row, col))
@@ -46,7 +47,7 @@ class Solution:
                 if (row + r, col + c) not in cleaned and robot.move():
                     backtrack(row + r, col + c, direction)
 
-                direction = (direction + 1)%4
+                direction = (direction + 1) % 4
                 if i == 3:
                     robot.turnRight()
                     robot.move()

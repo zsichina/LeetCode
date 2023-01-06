@@ -1,5 +1,6 @@
-from typing import List
 from collections import Counter
+from typing import List
+
 
 class Solution:
     def wordSubsets(self, words1: List[str], words2: List[str]) -> List[str]:
@@ -12,7 +13,7 @@ class Solution:
                     max_dict[key] = val
                 elif max_dict[key] < val:
                     max_dict[key] = val
-            
+
         for word in words1:
             d = Counter(word)
             is_universal = True
@@ -22,5 +23,5 @@ class Solution:
                     break
             if is_universal:
                 res.append(word)
-        
+
         return res

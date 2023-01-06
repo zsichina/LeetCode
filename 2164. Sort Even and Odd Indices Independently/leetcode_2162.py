@@ -1,5 +1,6 @@
 from typing import List
 
+
 class Solution:
     def sortEvenOdd(self, nums: List[int]) -> List[int]:
         nums[::2] = sorted(nums[::2])

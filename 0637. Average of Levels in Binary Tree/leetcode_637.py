@@ -1,5 +1,5 @@
-from typing import List, Optional
 from collections import deque
+from typing import List, Optional
 
 
 class TreeNode:
@@ -21,7 +21,7 @@ class Solution:
             node, lvl = q.popleft()
             if lvl > level:
                 level += 1
-                res.append(round(sm/cnt, 5))
+                res.append(round(sm / cnt, 5))
                 sm = 0
                 cnt = 0
 
@@ -29,10 +29,10 @@ class Solution:
             cnt += 1
 
             if node.left:
-                q.append((node.left, lvl+1))
+                q.append((node.left, lvl + 1))
             if node.right:
-                q.append((node.right, lvl+1))
+                q.append((node.right, lvl + 1))
 
-        res.append(round(sm/cnt, 5))
+        res.append(round(sm / cnt, 5))
 
         return res

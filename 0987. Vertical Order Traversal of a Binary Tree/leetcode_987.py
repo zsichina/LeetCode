@@ -1,6 +1,6 @@
-from typing import List, Optional
-from collections import defaultdict, deque
 import math
+from collections import defaultdict, deque
+from typing import List, Optional
 
 
 class TreeNode:
@@ -20,11 +20,10 @@ class Solution:
             d[col].append([row, root.val])
 
             if root.left:
-                dfs(root.left, row+1, col-1)
+                dfs(root.left, row + 1, col - 1)
 
             if root.right:
-                dfs(root.right, row+1, col+1)
-
+                dfs(root.right, row + 1, col + 1)
 
         d = defaultdict(list)
         start, end = 0, 0
@@ -32,7 +31,7 @@ class Solution:
         dfs(root, 0, 0)
 
         res = []
-        for i in range(start, end+1):
+        for i in range(start, end + 1):
             d[i] = sorted(d[i], key=lambda x: (x[0], x[1]))
             res.append([x[1] for x in d[i]])
 
@@ -45,10 +44,10 @@ class Solution:
             lst.append((col, row, root.val))
 
             if root.left:
-                dfs(root.left, row+1, col-1)
+                dfs(root.left, row + 1, col - 1)
 
             if root.right:
-                dfs(root.right, row+1, col+1)
+                dfs(root.right, row + 1, col + 1)
 
         lst = []
         dfs(root, 0, 0)
@@ -76,10 +75,10 @@ class Solution:
                 lst.append((col, row, node.val))
 
                 if node.left:
-                    q.append((node.left, row+1, col-1))
+                    q.append((node.left, row + 1, col - 1))
 
                 if node.right:
-                    q.append((node.right, row+1, col+1))
+                    q.append((node.right, row + 1, col + 1))
 
         lst = []
         bfs(root)
