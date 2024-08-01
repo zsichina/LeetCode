@@ -8,3 +8,8 @@ class Solution:
             if int(det[11:13]) > 60:
                 cnt += 1
         return cnt
+
+
+class Solution:
+    def countSeniors(self, details: List[str]) -> int:
+        return sum(int(det[11:13]) > 60 for det in details)
