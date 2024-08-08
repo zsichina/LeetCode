@@ -9,12 +9,12 @@ class Solution(object):
         """
         sums = []
         for i in range(n):
-            for j in range(i+1, n+1):
-                if j == i+1:
+            for j in range(i + 1, n + 1):
+                if j == i + 1:
                     sm = nums[i]
                 else:
-                    sm = sums[-1] + nums[j-1]
-                    sums.append(sm)
+                    sm = sums[-1] + nums[j - 1]
+                sums.append(sm)
         sums.sort()
-        return sum(sums[left-1:right])%(10**9+7)
-                                                                                                                                                                                                                                  
+        print(sums)
+        return sum(sums[left - 1 : right]) % (10**9 + 7)
