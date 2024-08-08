@@ -12,7 +12,7 @@ class Solution(object):
         cnt = 0
         for elem in arr:
             if counter[elem] == 1:
-                cnt +=1
+                cnt += 1
             if cnt == k:
                 return elem
         return ""
