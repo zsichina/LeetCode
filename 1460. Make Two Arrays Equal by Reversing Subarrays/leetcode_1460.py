@@ -1,3 +1,6 @@
+from collections import Counter
+
+
 class Solution(object):
     def canBeEqual(self, target, arr):
         """
