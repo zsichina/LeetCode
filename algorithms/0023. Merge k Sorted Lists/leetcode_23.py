@@ -3,7 +3,7 @@ from typing import List, Optional
 
 
 class ListNode:
-    def __init__(self, val=0, next=None):
+    def __init__(self, val: int = 0, next: Optional["ListNode"] = None):
         self.val = val
         self.next = next
 
@@ -11,7 +11,7 @@ class ListNode:
 class Solution:
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
         dummy = ListNode()
-        heap = []
+        heap: List[tuple[int, int]] = []
         heapify(heap)
         for idx, node in enumerate(lists):
             if node:
@@ -19,11 +19,11 @@ class Solution:
 
         curr = dummy
         while heap:
-            val, idx = heappop(heap)
-            curr.next = lists[idx]
-            curr = curr.next
-            if curr.next:
-                lists[idx] = curr.next
-                heappush(heap, (curr.next.val, idx))
+            _, idx = heappop(heap)
+            curr.next = lists[idx]  # type: ignore
+            curr = curr.next  # type: ignore
+            if curr.next:  # type: ignore
+                lists[idx] = curr.next  # type: ignore
+                heappush(heap, (curr.next.val, idx))  # type: ignore
 
         return dummy.next
