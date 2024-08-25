@@ -54,11 +54,11 @@ This project contains a collection of algorithms to solve various LeetCode probl
    ```
 
 + **With Docker:**
-   + Go inside the container
+   1. **Go inside the container**
    ```sh
    docker run --rm -it -v $(pwd)/algorithms:/usr/src/app/algorithms static-analysis bash
    ```
-   + run:
+   2. **run:**
    ```sh
    ./static_analysis.sh
    ```
