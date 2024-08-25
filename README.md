@@ -29,6 +29,7 @@ This project contains a collection of algorithms to solve various LeetCode probl
     ```
 
 3. **Install dependencies:**
+
    ```sh
    pip install -r requirements.txt
    ```
@@ -36,13 +37,9 @@ This project contains a collection of algorithms to solve various LeetCode probl
 ## Docker
 
 1. **Build the Docker image:**
+
    ```sh
    docker build -t static-analysis .
-   ```
-
-2. **Run the Docker container:**
-   ```sh
-   docker run --rm -v $(pwd):/usr/src/app static-analysis
    ```
 
 ## Usage
@@ -57,9 +54,9 @@ This project contains a collection of algorithms to solve various LeetCode probl
    ```
 
 + **With Docker:**
-   + ```sh
-   docker run --rm -it -v $(pwd)/algorithms:/usr/src/app/algorithms -w /usr/src/app static-analysis bash
-   <!-- docker run --rm -v $(pwd)/../algorithms:/usr/src/app/algorithms static-analysis -->
+   + Go inside the container
+   ```sh
+   docker run --rm -it -v $(pwd)/algorithms:/usr/src/app/algorithms static-analysis bash
    ```
    + run:
    ```sh
@@ -71,7 +68,7 @@ This project contains a collection of algorithms to solve various LeetCode probl
 The static_analysis.sh script performs the following actions:
 
 + Checks if any errors were found during the static analysis.
-+ Outputs the results of the static analysis, including the number of errors found by each tool.
++ Outputs the results of the static analysis.
 
 ## Contributing
 
